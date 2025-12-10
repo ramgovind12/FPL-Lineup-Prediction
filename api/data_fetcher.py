@@ -11,7 +11,7 @@ os.makedirs(output_dir, exist_ok=True)
 url = "https://fantasy.premierleague.com/api/bootstrap-static/"
 
 # Fetch JSON data from the FPL API
-response = requests.get(url)
+response = requests.get(url, verify=False)
 if response.status_code != 200:
     raise Exception(f"Failed to fetch data: {response.status_code}")
 data = response.json()
